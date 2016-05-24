@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>猜數字小遊戲!!</title>
+    <script>
+        function myFunction() {
+            var answer = Math.round(Math.random()*100);
+            //document.getElementById("answer").innerHTML = answer;
+            var guess;
+            for ( i=1 ; i<=7 ; i++ ){
+                guess = prompt("這是你的第 " + i + " 次機會，請猜~");
+                if ( guess == answer ) {
+                    document.getElementById("try_0"+i).innerHTML = "答案就是 " + guess + " !!!  你答對了唷!!!";
+                    break;
+                } else if (guess > answer ){
+                    document.getElementById("try_0"+i).innerHTML = "答案比 " + guess + " 還要小唷!!";
+                } else {
+                    document.getElementById("try_0"+i).innerHTML = "答案比 " + guess + " 還要大唷!!";
+                }
+                
+            }
+            
+        };
+    </script>
+</head>
+
+<body>
+
+<p>請點選以下按鈕骰出一個數字，數字會在1~100之間，再進行猜測吧!!</p>
+<p>你有七次機會可以挑戰，超過七次就輸惹~~</p>
+
+<button onclick="myFunction()">我要挑戰!</button>
+
+<p id="try_01"></p>
+<p id="try_02"></p>
+<p id="try_03"></p>
+<p id="try_04"></p>
+<p id="try_05"></p>
+<p id="try_06"></p>
+<p id="try_07"></p>
+
+<p id="answer"></p>
+
+</body>
+</html>
